@@ -19,7 +19,7 @@ defmodule Opus.MixProject do
   def application do
     [
       mod: {Opus.Application, []},
-      extra_applications: [:logger, :runtime_tools]
+      extra_applications: [:logger, :runtime_tools, :exq, :exq_ui, :timex]
     ]
   end
 
@@ -38,7 +38,11 @@ defmodule Opus.MixProject do
       {:phoenix_live_reload, "~> 1.2", only: :dev},
       {:gettext, "~> 0.11"},
       {:jason, "~> 1.0"},
-      {:plug_cowboy, "~> 2.0"}
+      {:plug_cowboy, "~> 2.0"},
+      {:poison, "~> 4.0"},
+      {:timex, "~> 3.5"},
+      {:exq, "~> 0.13.2"},
+      {:exq_ui, "~> 0.10.0"}
     ]
   end
 end

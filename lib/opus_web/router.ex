@@ -19,8 +19,23 @@ defmodule OpusWeb.Router do
     get "/", PageController, :index
   end
 
-  # Other scopes may use custom stacks.
-  # scope "/api", OpusWeb do
-  #   pipe_through :api
-  # end
+  scope "/api", OpusWeb do
+    pipe_through :api
+    resources "/jobs", JobController, except: [:new, :edit]
+    post "/jobs/schedule", JobController, :schedule
+  end
+
+  pipeline :exq do
+    plug :accepts, ["html"]
+    plug :fetch_session
+    plug :fetch_flash
+    plug :put_secure_browser_headers
+    plug ExqUi.RouterPlug, namespace: "exq"
+  end
+
+  scope "/exq", ExqUi do
+    pipe_through :exq
+    forward "/", RouterPlug.Router, :index
+  end
+
 end
