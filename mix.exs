@@ -19,7 +19,7 @@ defmodule Opus.MixProject do
   def application do
     [
       mod: {Opus.Application, []},
-      extra_applications: [:logger, :runtime_tools, :exq, :exq_ui, :timex]
+      extra_applications: [:logger, :runtime_tools, :exq, :exq_ui, :timex, :guardian]
     ]
   end
 
@@ -42,7 +42,10 @@ defmodule Opus.MixProject do
       {:poison, "~> 4.0"},
       {:timex, "~> 3.5"},
       {:exq, "~> 0.13.2"},
-      {:exq_ui, "~> 0.10.0"}
+      {:exq_ui, "~> 0.10.0"},
+      {:redix, ">= 0.9.3"},
+      {:nanoid, "~> 2.0.1"},
+      {:guardian, "~> 1.0"}
     ]
   end
 end

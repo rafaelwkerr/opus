@@ -40,5 +40,16 @@ config :exq,
   max_retries: 25,
   shutdown_timeout: 5000
 
+# Configure Exq UI
 config :exq_ui,
   server: true
+
+# Configure Guardian
+config :opus_app, Opus.Guardian,
+  issuer: "opus_app",
+  secret_key: "aQTMbwqsE1zWHZ4+TbtWWznKz6oaNGwQlb9ia1PtzRTOfIkXrDOV8M5N3JdmPWqn"
+
+# Configure NanoId
+config :nanoid,
+  size: 21,
+  alphabet: "_-0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"

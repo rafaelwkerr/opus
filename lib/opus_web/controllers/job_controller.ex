@@ -22,24 +22,13 @@ defmodule OpusWeb.JobController do
   end
 
   def show(conn, %{"id" => id}) do
-    job_pid = Application.get_env(:exq, :name) |> Exq.Api.Server.server_name
-    {:ok, processes} = Exq.Api.processes(job_pid)
-
-    for p <- processes do
-
-      pjob = p.job
-      IO.inspect jobMap = Poison.decode!(pjob)
-      jobId = Map.get(jobMap, "jid")
-
-      cond do
-        id == jobId ->
-          render(conn, "get.json", job: %{id: id, status: "running"})
-        true -> "_"
+    with [ok: status] <- Works.get_job_status(id),
+         {:ok, result} <- Guardian.Plug.current_resource(conn) do
+      case status do
+        :running -> render(conn, "get.json", job: %{id: id, status: "running"})
       end
     end
-
     render(conn, "get.json", job: %{id: id, status: "completed"})
-
   end
 
 end

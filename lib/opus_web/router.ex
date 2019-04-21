@@ -13,16 +13,27 @@ defmodule OpusWeb.Router do
     plug :accepts, ["json"]
   end
 
+  pipeline :jwt_authenticated do
+    plug Opus.Auth.AuthPipeline
+  end
+
   scope "/", OpusWeb do
     pipe_through :browser
 
     get "/", PageController, :index
   end
 
-  scope "/api", OpusWeb do
+  scope "/api/v1", OpusWeb do
     pipe_through :api
+
+    resources "/users", UserController, only: [:create, :show]
+  end
+
+  scope "/api/v1", OpusWeb do
+    pipe_through [:api, :jwt_authenticated]
+
     resources "/jobs", JobController, except: [:new, :edit]
-    post "/jobs/schedule", JobController, :schedule
+    get "/jobs/schedule", JobController, :schedule
   end
 
   pipeline :exq do
