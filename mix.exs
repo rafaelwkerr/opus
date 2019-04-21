@@ -45,7 +45,9 @@ defmodule Opus.MixProject do
       {:exq_ui, "~> 0.10.0"},
       {:redix, ">= 0.9.3"},
       {:nanoid, "~> 2.0.1"},
-      {:guardian, "~> 1.0"}
+      {:guardian, "~> 1.0"},
+      {:comeonin, "~> 4.0"},
+      {:bcrypt_elixir, "~> 1.0"}
     ]
   end
 end
