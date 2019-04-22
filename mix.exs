@@ -47,6 +47,7 @@ defmodule Opus.MixProject do
       {:nanoid, "~> 2.0.1"},
       {:guardian, "~> 1.0"},
       {:comeonin, "~> 4.0"},
+      {:mox, "~> 0.5", only: :test},
       {:bcrypt_elixir, "~> 1.0"}
     ]
   end

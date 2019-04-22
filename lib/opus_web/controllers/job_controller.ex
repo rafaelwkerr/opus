@@ -22,8 +22,7 @@ defmodule OpusWeb.JobController do
   end
 
   def show(conn, %{"id" => id}) do
-    with [ok: status] <- Works.get_job_status(id),
-         {:ok, result} <- Guardian.Plug.current_resource(conn) do
+    with [ok: status] <- Works.get_job_status(id) do
       case status do
         :running -> render(conn, "get.json", job: %{id: id, status: "running"})
       end

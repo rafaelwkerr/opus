@@ -1,14 +1,12 @@
 defmodule Opus.Works do
   alias Opus.Works.Job
 
-  def create_job(attrs) do
-    IO.inspect attrs
-    Exq.enqueue(Exq, "jobs", Job, [attrs["name"], attrs["input"]])
+  def create_job(job) do
+    Exq.enqueue(Exq, "jobs", Job, [job["name"], job["input"]])
   end
 
-  def schedule_job(attrs) do
-    IO.inspect time = attrs["time"]
-    Exq.enqueue_in(Exq, "jobs", time, Job, [attrs["name"], attrs["input"]])
+  def schedule_job(job) do
+    Exq.enqueue_in(Exq, "jobs", job["time"], Job, [job["name"], job["input"]])
   end
 
   def get_job_status(id) do
@@ -20,10 +18,10 @@ defmodule Opus.Works do
       |> Poison.decode!
       |> Map.get("jid")
       |> case do
-        id-> {:ok, :running}
+        id -> {:ok, :running}
       end
     end
-    status
+    IO.inspect status
   end
 
 end

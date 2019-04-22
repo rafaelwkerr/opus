@@ -1,7 +1,7 @@
 {application,opus,
              [{applications,[kernel,stdlib,elixir,logger,runtime_tools,exq,
                              exq_ui,timex,guardian,redix,gettext,jason,poison,
-                             bcrypt_elixir,comeonin,phoenix_pubsub,nanoid,
+                             bcrypt_elixir,comeonin,mox,phoenix_pubsub,nanoid,
                              phoenix_html,plug_cowboy,phoenix]},
               {description,"opus"},
               {modules,['Elixir.Opus','Elixir.Opus.Accounts',
