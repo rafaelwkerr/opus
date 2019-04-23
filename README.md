@@ -1,6 +1,7 @@
 # Opus
 
-## Opus is an open source platform to running, schedulle and monitoring long-running background jobs.
+### Opus is an open source platform to running, schedulle and monitoring long-running background jobs.
+<br/>
 
 [![](https://github.com/rafaelwkerr/my-files/blob/master/elixir_and_phoenix_and_redis.png)](https://github.com/rafaelwkerr/my-files/blob/master/elixir_and_phoenix_and_redis.png)
 
@@ -39,13 +40,11 @@ Exq has a UI to manage the jobs:
  
 [![](https://github.com/rafaelwkerr/my-files/blob/master/Screenshot%20from%202019-04-23%2019-08-40.png)](https://github.com/rafaelwkerr/my-files/blob/master/Screenshot%20from%202019-04-23%2019-08-40.png)
 
+<br/>
 
 ------------
 
-
- 
-[![](https://github.com/rafaelwkerr/my-files/blob/master/phoenix.png)](https://github.com/rafaelwkerr/my-files/blob/master/phoenix.png)
-
+<br/>
 
 ## To start your Phoenix server:
 
