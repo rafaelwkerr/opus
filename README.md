@@ -11,7 +11,7 @@ Before start the Opus platform, you'll need a Redix server running, you can conf
 
 `/config/config.exs`
 
-```erlang
+```
 config :exq,
   name: Exq,
   host: "172.17.0.2",
