@@ -8,7 +8,7 @@
 Opus is made with Phoenix, an Elixir web framework, and Redis, to Message Queue and PubSub services
 
 
-Before start the Opus platform, you'll need a Redix server running, you can configure Redis on this elixir script file:
+Before start the Opus platform, you'll need a Redis server running. You can configurate Redis on elixir script file:
 
 `/config/config.exs`
 
@@ -38,7 +38,7 @@ Exq has a UI to manage the jobs:
 
 
  
-[![](https://github.com/rafaelwkerr/my-files/blob/master/Screenshot%20from%202019-04-23%2019-08-40.png)](https://github.com/rafaelwkerr/my-files/blob/master/Screenshot%20from%202019-04-23%2019-08-40.png)
+![](https://github.com/rafaelwkerr/my-files/blob/master/Screenshot%20from%202019-04-23%2019-08-40.png)
 
 <br/>
 
@@ -55,7 +55,7 @@ Exq has a UI to manage the jobs:
 Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
 
 
-[![](https://github.com/rafaelwkerr/my-files/blob/master/Screenshot%20from%202019-04-23%2019-20-52.png)](https://github.com/rafaelwkerr/my-files/blob/master/Screenshot%20from%202019-04-23%2019-20-52.png)
+![](https://github.com/rafaelwkerr/my-files/blob/master/Screenshot%20from%202019-04-23%2019-20-52.png)
 
 
 Ready to run in production? Please [check our deployment guides](https://hexdocs.pm/phoenix/deployment.html).
