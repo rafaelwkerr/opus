@@ -29,7 +29,7 @@ import_config "#{Mix.env()}.exs"
 # Configures Exq
 config :exq,
   name: Exq,
-  host: "172.17.0.2",
+  host: "redis",
   port: 6379,
   namespace: "exq",
   concurrency: :infinite,
