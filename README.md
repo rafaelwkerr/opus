@@ -51,7 +51,7 @@ Exq has a UI to manage the jobs:
 * Install dependencies with `mix deps.get`
 * Install Node.js dependencies with `cd assets && npm install`
 * Start Phoenix endpoint with `mix phx.server`
-* Or just run `docker-compose up`
+* **Or just run** `docker-compose up`
 
 Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
 
